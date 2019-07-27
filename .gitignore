@@ -9,6 +9,7 @@ gradlew
 gradlew.bat
 gradle
 .gradle
+/build
 
 # User-specific files
 *.suo
