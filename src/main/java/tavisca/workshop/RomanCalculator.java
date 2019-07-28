@@ -3,7 +3,7 @@ package tavisca.workshop;
 public class RomanCalculator {
 
     public String roman;
-    private int decimal;
+    public int decimal;
 
     public int convertRomanToArabicDecimal() {
         decimal = 0;
@@ -20,8 +20,10 @@ public class RomanCalculator {
                     i++;
                 }
             }
-            else
+            else {
                 decimal += value1;
+                i++;
+            }
         }
         return decimal;
     }
