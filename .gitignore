@@ -4,10 +4,6 @@
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
 ghwa
-build.gradle.kts
-settings.gradle
-gradlew
-gradlew.bat
 gradle
 .gradle
 <<<<<<< HEAD
