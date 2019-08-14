@@ -6,7 +6,6 @@
 gradle/
 build/
 build.gradle.kts
-settings.gradle
 gradlew
 gradlew.bat
 
