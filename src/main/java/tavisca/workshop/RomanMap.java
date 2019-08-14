@@ -3,7 +3,7 @@ package tavisca.workshop;
 import java.util.HashMap;
 
 public class RomanMap {
-    public static HashMap<Character, Integer> romanMap = new HashMap<>()  {{
+    public static HashMap<Character, Integer> romanMap = new HashMap<Character, Integer>()  {{
         put('I', 1);
         put('V', 5);
         put('X', 10);
