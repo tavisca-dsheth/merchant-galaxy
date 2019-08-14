@@ -7,40 +7,9 @@ pipeline {
                      echo "I am in Test step"
                      chmod +x ./gradlew
                      ./gradlew build
-                 '''
+                 ''',
+                 label: "Building Project & Testing"
              }
-        }
-        stage('Test')
-        {
-            steps {
-                sh script: '''
-                    echo "I am in Test step"
-                '''
-            }
-        }
-        stage('Static Code Analysis')
-        {
-            steps {
-                sh script: '''
-                    echo "I am in Sonarqube scan"
-                '''
-            }
-        }
-        stage('Build DockerImage')
-        {
-            steps {
-                sh script: '''
-                    echo "I am Building DockerImage ="
-                '''
-            }
-        }
-        stage('Publish DockerImage')
-        {
-            steps {
-                sh script: '''
-                    echo "I am Pubishing DockerImage ="
-                '''
-            }
         }
     }
 }
