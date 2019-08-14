@@ -5,7 +5,6 @@ pipeline {
             steps {
 		sh  'chmod +x ./gradlew'
                 sh  'gradlew build'
-#            label: "Building Project"
             }
         }
         stage('Test')
@@ -14,7 +13,6 @@ pipeline {
                 sh script: '''
                     echo "I am in Test step"
                 ''',
-#            label: "Running Unit Test Cases"
             }
         }
         stage('Static Code Analysis')
@@ -23,7 +21,6 @@ pipeline {
                 sh script: '''
                     echo "I am in Sonarqube scan"
                 ''',
-#            label: "Running Sonarqube Scan"
             }
         }
         stage('Build DockerImage')
@@ -32,7 +29,6 @@ pipeline {
                 sh script: '''
                     echo "I am Building DockerImage ="
                 ''',
- #           label: "Building Docker Image"
             }
         }
         stage('Publish DockerImage')
@@ -41,9 +37,7 @@ pipeline {
                 sh script: '''
                     echo "I am Pubishing DockerImage ="
                 ''',
-  #          label: "Publishing Docker Image"
             }
         }
     }
 }
-
