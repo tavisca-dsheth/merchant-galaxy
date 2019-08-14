@@ -1,13 +1,13 @@
 pipeline {
     agent any
     stages {
-        stage('Test'){
+        stage('Build'){
              steps {
                  sh script: '''
                      echo "I am in Test step"
                      chmod +x ./gradlew
                      ./gradlew build
-                 ''',
+                 '''
              }
         }
         stage('Test')
@@ -15,7 +15,7 @@ pipeline {
             steps {
                 sh script: '''
                     echo "I am in Test step"
-                ''',
+                '''
             }
         }
         stage('Static Code Analysis')
@@ -23,7 +23,7 @@ pipeline {
             steps {
                 sh script: '''
                     echo "I am in Sonarqube scan"
-                ''',
+                '''
             }
         }
         stage('Build DockerImage')
@@ -31,7 +31,7 @@ pipeline {
             steps {
                 sh script: '''
                     echo "I am Building DockerImage ="
-                ''',
+                '''
             }
         }
         stage('Publish DockerImage')
@@ -39,7 +39,7 @@ pipeline {
             steps {
                 sh script: '''
                     echo "I am Pubishing DockerImage ="
-                ''',
+                '''
             }
         }
     }
