@@ -1,2 +1,32 @@
 pipeline  {
+    agent any
+    stages  {
+        stage('Build')  {
+            steps  {
+                sh script: '''
+		echo "Building Stage"
+		chmod +x ./gradlew
+		./gradlew build -x test
+		'''.
+		label: "Build"
+            }
+        }
+	stage('Test')  {
+	    steps  {
+		sh script: '''
+		echo "Testing Stage"
+		./gradlew test
+		''',
+		label: "Test"
+	    }
+	}
+	stage('Build Docker')  {
+	    steps  {
+		sh script: '''
+		docker run -t dhvani_image -f .infra/docker/Dockerfile
+		''',
+		label: "Build docker image"
+	    }
+	}
+    }
 }
