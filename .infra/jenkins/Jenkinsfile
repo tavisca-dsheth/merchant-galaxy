@@ -23,7 +23,7 @@ pipeline  {
 	stage('Build Docker')  {
 	    steps  {
 		sh script: '''
-		docker run -t merchantgalaxy -f .infra/docker/Dockerfile .
+		docker run -t "merchantgalaxy" -f .infra/docker/Dockerfile .
 		''',
 		label: "Build docker image"
 	    }
