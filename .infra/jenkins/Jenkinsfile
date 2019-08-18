@@ -23,7 +23,7 @@ pipeline  {
 	stage('Build Docker')  {
 	    steps  {
 		sh script: '''
-		docker run -t dhvani_image -f .infra/docker/Dockerfile
+		docker run -t dhvani_image -f .infra/docker/Dockerfile .
 		''',
 		label: "Build docker image"
 	    }
