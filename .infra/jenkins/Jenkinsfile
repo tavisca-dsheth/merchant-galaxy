@@ -32,8 +32,8 @@ pipeline  {
 	    steps  {
 		sh script: '''
 		docker login -u dhvani2510 -p hjdj@0389
-		docker tag merchantgalaxy:latest dhvani2510/MerchantGalaxy:latest
-		docker push dhvani2510/MerchantGalaxy:latest
+		docker tag merchantgalaxy:latest dhvani2510/merchant_galaxy:latest
+		docker push dhvani2510/merchant_galaxy:latest
 		''',
 		label: "Publish"
 	    }
