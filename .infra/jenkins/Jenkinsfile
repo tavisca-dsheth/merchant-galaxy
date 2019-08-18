@@ -28,5 +28,15 @@ pipeline  {
 		label: "Build docker image"
 	    }
 	}
+	stage('Publish Docker Image')  {
+	    steps  {
+		sh script: '''
+		docker login -u dhvani2510 -p hjdj@0389
+		docker tag dhvani_image:latest dhvani2510/MerchantGalaxy:latest
+		docker push dhvani2510/MerchantGalaxy:latest
+		''',
+		label: "Publish"
+	    }
+	}
     }
 }
