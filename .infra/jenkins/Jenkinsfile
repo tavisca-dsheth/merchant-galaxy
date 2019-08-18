@@ -23,7 +23,6 @@ pipeline  {
 	stage('Build Docker')  {
 	    steps  {
 		sh script: '''
-		service docker start
 		docker run -t dhvani_image -f Dockerfile
 		''',
 		label: "Build docker image"
