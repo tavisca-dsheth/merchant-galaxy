@@ -22,7 +22,7 @@ pipeline  {
 	}
 	stage('Static Code Analysis')  {
 	    steps  {
-		sh script '''
+		sh script: '''
 		./gradlew sonarqube \
 		-Dsonar.projectKey=tavisca-dsheth_merchant-galaxy \
 		-Dsonar.organization=tavisca-dsheth \
